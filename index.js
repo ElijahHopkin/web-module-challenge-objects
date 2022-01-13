@@ -57,14 +57,16 @@ const burger = {
     if (relationship==='teacher') {
       return this.price *0.75
     }else if (relationship==='student') {
-      return this.price *0.90
-    }else {
-      return this.price
+      return this.price *0.75
+    }else if( relationship==='public') {
+      return this.price* 0.90
     }
   }
   
 }
-// console.log('task 2', burger.discount('teacher'))
+// console.log('task 2', burger.discount('teacher'));
+// console.log('task 2', burger.discount('student'));
+// console.log('task 2', burger.discount('public'));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -123,10 +125,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, num) {
+return `${array[num].name} gave the restaurant a ${array[num].rating} star review, and their feedback was: ${array[num].feedback}`
 }
-
+console.log(getReviewByIndex(reviews, 0))
 
   
 
@@ -142,9 +144,10 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+ return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}`
 } 
+console.log(getLastReview(reviews))
 
 
 
